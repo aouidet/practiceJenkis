@@ -1,8 +1,8 @@
 @Library('my_shared_library@main') _
 
 node {
-   sh "echo ${uploadedfile}"
-   def file_in_workspace = copy_bin_to_wks.inputGetFile(${uploadedfile});
+   def file_input = sh "echo ${uploadedfile}"
+   def file_in_workspace = copy_bin_to_wks.inputGetFile(file_input);
    sh "ls -ltR"
    sh "echo ${env.WORKSPACE}"
 
