@@ -2,7 +2,7 @@
 
 node {
    sh "echo ${uploadedfile}"
-   def file_in_workspace = copy_bin_to_wks.inputGetFile('text.txt');
+   def file_in_workspace = copy_bin_to_wks.inputGetFile(${uploadedfile});
    sh "ls -ltR"
    sh "echo ${env.WORKSPACE}"
 
