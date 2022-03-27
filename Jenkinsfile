@@ -1,17 +1,6 @@
-pipeline {
+@Library('my-shared-library@main') _
 
-    agent any
-    stages {
-        stage("build") {
-            steps {
-                echo "building the application .."
-            }
-        }
-
-         stage("test") {
-                    steps {
-                        echo "testing the application .."
-                    }
-                }
-    }
+node {
+   def file_in_workspace = copy_bin_to_wks.inputGetFile('test.txt');
+   sh "ls -ltR"
 }
